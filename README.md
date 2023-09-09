@@ -1,2 +1,2 @@
 # rock-paper-scissors
-My first Javascript Project
+My first Javascript Project.
