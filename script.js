@@ -7,29 +7,35 @@ if (randomChoice == 1) {
 }else {
     return 'Scissors'}
 }
+
+
+
 function playRound(playerSelection,computerSelection){
+    // playerSelection = prompt('Enter Your Choice:');
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     computerSelection = getComputerChoice();
+    let playResult = '';
     if (playerSelection == computerSelection) {
-        console.log('Tie Game');
+        playResult = 'Tie Game';
     } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
-        console.log('You lose,Paper beats Rock.');
+        playResult = 'You lose,Paper covers Rock.';
     } else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
-        console.log('You win,Rock beats Scissors.');
+        playResult = 'You win,Rock breaks Scissors!';
     } else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
-        console.log('You win,Paper beats Rock.');
+        playResult = 'You win,Paper covers Rock!';
     } else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
-        console.log('You lose,Scissors beats Paper.');
+        playResult = 'You lose,Scissors cuts Paper.';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
-        console.log('You win, Scissors beats Paper');
+        playResult = 'You win, Scissors cuts Paper';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
-        console.log('CYou lose,Rock beats Scissors.');
-    } else{console.log('Invalid Selection');}
-
-    return playerSelection,computerSelection;
+        playResult = 'You lose,Rock breaks Scissors.'
+    } else{console.log('Input has to be rock,paper or scissors.');}
+    alert(playResult);
     
+    return playerSelection,computerSelection,playResult;
 }  
 
-playerSelection = "rock";
-computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+
+
+
+console.log(playRound(prompt('Enter Your Choice:'),getComputerChoice()));
