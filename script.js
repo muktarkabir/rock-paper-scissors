@@ -8,13 +8,12 @@ if (randomChoice == 1) {
     return 'Scissors'}
 }
 
-
-
 function playRound(playerSelection,computerSelection){
-    // playerSelection = prompt('Enter Your Choice:');
+    playerSelection = prompt('Enter Your Choice:');
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+
     computerSelection = getComputerChoice();
-    let playResult = '';
+      let playResult = '';
     if (playerSelection == computerSelection) {
         playResult = 'Tie Game';
     } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
@@ -31,11 +30,17 @@ function playRound(playerSelection,computerSelection){
         playResult = 'You lose,Rock breaks Scissors.'
     } else{console.log('Input has to be rock,paper or scissors.');}
     alert(playResult);
-    
+    console.log(playResult);
     return playerSelection,computerSelection,playResult;
 }  
 
 
 
+function game() {
+    for (let roundCount = 0; roundCount < 5; roundCount++) {
+        playRound();
+        
+    }
+}
 
-console.log(playRound(prompt('Enter Your Choice:'),getComputerChoice()));
+// game()
