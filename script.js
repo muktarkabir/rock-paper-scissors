@@ -18,7 +18,7 @@ function playRound(playerSelection,computerSelection){
     computerSelection = getComputerChoice();
      
     if (playerSelection == computerSelection) {
-        playResult = 'Tie Game';
+        playResult = 'Tie Game.';
     } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
         playResult = 'You lose,Paper covers Rock.';
     } else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
@@ -31,7 +31,7 @@ function playRound(playerSelection,computerSelection){
         playResult = 'You win, Scissors cuts Paper!';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
         playResult = 'You lose,Rock breaks Scissors.'
-    } else{console.log(alarm); return playRound()}//returns the function when an input is invalid instead of using a do while.
+    } else{alert(alarm); return playRound()}//returns the function when an input is invalid instead of using a do while.
     alert(playResult);
     console.log(playResult);
     return playResult;
@@ -47,11 +47,19 @@ function game() {
     
     for (let roundCount = 0; roundCount < 5; roundCount++) {
         playRound();
-      if (playResult == 'You win,Rock breaks Scissors!' || 'You win,Paper covers Rock!' || 'You win, Scissors cuts Paper!') {
+      if (playResult == 'You win,Rock breaks Scissors!') {
         wins +=1;
-    }else if (playResult == 'You lose,Paper covers Rock.' || 'You lose,Scissors cuts Paper.' || 'You lose,Rock breaks Scissors') {
+    }else if (playResult == 'You win,Paper covers Rock!') {
+        wins +=1;
+    }else if (playResult == 'You win, Scissors cuts Paper!') {
+        wins +=1;
+    }else if (playResult == 'You lose,Paper covers Rock.') {
         losses += 1;
-      }else if (playResult =='Tie Game') {
+    }else if (playResult == 'You lose,Scissors cuts Paper.') {
+        losses +=1;
+    }else if (playResult == 'You lose,Rock breaks Scissors.') {
+        losses +=1;
+    }else if (playResult =='Tie Game.') {
         ties += 1;
       } 
       
@@ -71,4 +79,4 @@ function game() {
 }
 
 
-//  game()
+ game()
