@@ -31,7 +31,7 @@ function playRound(playerSelection,computerSelection){
         playResult = 'You win, Scissors cuts Paper!';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
         playResult = 'You lose,Rock breaks Scissors.'
-    } else{console.log(alarm);}
+    } else{console.log(alarm); return playRound()}//returns the function when an input is invalid instead of using a do while.
     alert(playResult);
     console.log(playResult);
     return playResult;
@@ -59,7 +59,7 @@ function game() {
     }
     if (wins > losses) {
         finalMessage = `Congratulations! You defeated the machine ${wins} to ${losses}.` 
-     }if (losses > wins){
+     }else if (losses > wins){
          finalMessage = `You lost to the Computer ${losses} to ${wins}.`
      }else{
          finalMessage = 'It\'s a Draw.';
@@ -71,4 +71,4 @@ function game() {
 }
 
 
- game()
+//  game()
