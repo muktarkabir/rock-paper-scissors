@@ -8,12 +8,15 @@ if (randomChoice == 1) {
     return 'Scissors'}
 }
 
-function playRound(playerSelection,computerSelection){
-    playerSelection = prompt('Enter Your Choice:');
-    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
 
+let playResult = '';
+
+function playRound(playerSelection,computerSelection){
+    let alarm = 'Wrong Input.';
+    playerSelection = prompt('Enter Rock,Paper or Scissors:');
+    playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     computerSelection = getComputerChoice();
-      let playResult = '';
+     
     if (playerSelection == computerSelection) {
         playResult = 'Tie Game';
     } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
@@ -25,22 +28,47 @@ function playRound(playerSelection,computerSelection){
     } else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
         playResult = 'You lose,Scissors cuts Paper.';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
-        playResult = 'You win, Scissors cuts Paper';
+        playResult = 'You win, Scissors cuts Paper!';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
         playResult = 'You lose,Rock breaks Scissors.'
-    } else{console.log('Input has to be rock,paper or scissors.');}
+    } else{console.log(alarm);}
     alert(playResult);
     console.log(playResult);
-    return playerSelection,computerSelection,playResult;
+    return playResult;
 }  
 
 
 
 function game() {
+    let wins = 0;
+    let losses = 0;
+    let ties = 0;
+    let finalMessage = '';
+    
     for (let roundCount = 0; roundCount < 5; roundCount++) {
         playRound();
-        
+      if (playResult == 'You win,Rock breaks Scissors!' || 'You win,Paper covers Rock!' || 'You win, Scissors cuts Paper!') {
+        wins +=1;
+    }else if (playResult == 'You lose,Paper covers Rock.' || 'You lose,Scissors cuts Paper.' || 'You lose,Rock breaks Scissors') {
+        losses += 1;
+      }else if (playResult =='Tie Game') {
+        ties += 1;
+      } 
+      
+     
     }
+    if (wins > losses) {
+        finalMessage = `Congratulations! You defeated the machine ${wins} to ${losses}.` 
+     }if (losses > wins){
+         finalMessage = `You lost to the Computer ${losses} to ${wins}.`
+     }else{
+         finalMessage = 'It\'s a Draw.';
+     }
+     alert(finalMessage);
+     console.log(finalMessage,wins,losses,ties);
+    
+
 }
 
-// game()
+
+ game()
