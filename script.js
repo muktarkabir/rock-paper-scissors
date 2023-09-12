@@ -10,13 +10,12 @@ if (randomChoice == 1) {
 
 
 let playResult = '';
-
 function playRound(playerSelection,computerSelection){
     let alarm = 'Wrong Input.';
     playerSelection = prompt('Enter Rock,Paper or Scissors:');
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
     computerSelection = getComputerChoice();
-     
+    
     if (playerSelection == computerSelection) {
         playResult = 'Tie Game.';
     } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
@@ -47,7 +46,7 @@ function game() {
     
     for (let roundCount = 0; roundCount < 5; roundCount++) {
         playRound();
-      if (playResult == 'You win,Rock breaks Scissors!') {
+    if (playResult == 'You win,Rock breaks Scissors!') {
         wins +=1;
     }else if (playResult == 'You win,Paper covers Rock!') {
         wins +=1;
@@ -61,22 +60,22 @@ function game() {
         losses +=1;
     }else if (playResult =='Tie Game.') {
         ties += 1;
-      } 
-      
-     
+    } 
+    
+    
     }
     if (wins > losses) {
         finalMessage = `Congratulations! You defeated the machine ${wins} to ${losses}.` 
-     }else if (losses > wins){
-         finalMessage = `You lost to the Computer ${losses} to ${wins}.`
-     }else{
-         finalMessage = 'It\'s a Draw.';
-     }
-     alert(finalMessage);
-     console.log(finalMessage,wins,losses,ties);
+    }else if (losses > wins){
+        finalMessage = `You lost to the Computer ${losses} to ${wins}.`
+    }else{
+        finalMessage = 'It\'s a Draw.';
+    }
+    alert(finalMessage);
+    console.log(finalMessage,wins,losses,ties);
     
 
 }
 
 
- game()
+game()
