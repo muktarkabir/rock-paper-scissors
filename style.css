@@ -1,3 +1,7 @@
+@font-face {
+    font-family: Dune;
+    src: url(Dune_Rise.ttf);
+}
 *{
     padding: 0;
     margin: 0;
@@ -11,19 +15,25 @@ body{
     /* background-color: gold; */
     background-image: linear-gradient(to right, #0099f7,#f11712);
     gap: 50px;
+    font-family: Dune;
 }
 .title{
-    font-size: 60px;
+    font-size: 50px;
     padding-top: 80px;
+    padding-bottom: 20px;
+}
+.sub-title{
+    display: flex;
+    justify-content: center;
 }
 .result-display{
-    font-size: 30px;
+    font-size: 20px;
 }
 .score-container{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 700px;
     height: 70px;
 }
 .human-score{
@@ -33,6 +43,8 @@ body{
     align-items: center;
     gap: 15px;
     
+    
+    
 }
 .computer-score{
     display: flex;
@@ -40,6 +52,12 @@ body{
     justify-content: space-between;
     align-items: center;
     gap: 15px;   
+}
+.h-s-text{
+    font-size: 15px;
+}
+.c-s-text{
+    font-size: 15px;
 }
 .h-s-num{
     font-size: 40px;
@@ -55,10 +73,16 @@ body{
     height: 100px;
 }
 button{
-    width: 70px;
-    height: 40px;
+    width: 90px;
+    height: 50px;
     border-radius: 8px;
-    border: none;
+    font-family: Dune;
+    font-size: 10px;
     background-color: rgb(134, 30, 175);
     color: cornsilk;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+    background-color: #008CBA;
+    color: white;
 }
