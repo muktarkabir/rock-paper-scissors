@@ -12,7 +12,6 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    /* background-color: gold; */
     background-image: linear-gradient(to right, #0099f7,#f11712);
     gap: 50px;
     font-family: Dune;
@@ -25,6 +24,11 @@ body{
 .sub-title{
     display: flex;
     justify-content: center;
+}
+#result-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .result-display{
     font-size: 20px;
