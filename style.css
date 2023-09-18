@@ -8,7 +8,8 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-color: gold;
+    /* background-color: gold; */
+    background-image: linear-gradient(to right, #0099f7,#f11712);
     gap: 50px;
 }
 .title{
