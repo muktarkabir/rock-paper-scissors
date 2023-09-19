@@ -77,5 +77,14 @@ function game() {
 
 }
 
-
 // game()
+
+
+
+const buttons = document.querySelectorAll("button");
+const clickSound = document.getElementById("click");
+buttons.forEach(button => {
+    button.addEventListener("click",()=>{
+        clickSound.play();
+    });
+});
