@@ -82,6 +82,7 @@ button{
     border-radius: 8px;
     font-family: Dune;
     font-size: 10px;
+    font-weight: bolder;
     background-color: rgb(134, 30, 175);
     color: cornsilk;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -89,4 +90,7 @@ button{
 button:hover {
     background-color: #008CBA;
     color: white;
+}
+button:active{
+    font-size: 11px;
 }
