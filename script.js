@@ -9,22 +9,22 @@ if (randomChoice == 1) {
 }
 
 function playRound(playerSelection,computerSelection){
-    let playResult = '';
+    let playResult = document.querySelector('.round-result > p')
     computerSelection = getComputerChoice();   
     if (playerSelection == computerSelection) {
-        playResult = 'Draw.';
+        playResult.textContent = 'Draw.';
     } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
-        playResult = 'You lose,Paper covers Rock.';
+        playResult.textContent = 'You lose,Paper covers Rock.';
     } else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
-        playResult = 'You win,Rock breaks Scissors!';
+        playResult.textContent = 'You win,Rock breaks Scissors!';
     } else if (playerSelection == 'Paper' && computerSelection == 'Rock') {
-        playResult = 'You win,Paper covers Rock!';
+        playResult.textContent = 'You win,Paper covers Rock!';
     } else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
-        playResult = 'You lose,Scissors cuts Paper.';
+        playResult.textContent = 'You lose,Scissors cuts Paper.';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
-        playResult = 'You win, Scissors cuts Paper!';
+        playResult.textContent = 'You win, Scissors cuts Paper!';
     } else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
-        playResult = 'You lose,Rock breaks Scissors.'
+        playResult.textContent = 'You lose,Rock breaks Scissors.'
     }
     console.log(playResult);
     return playResult;
