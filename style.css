@@ -93,4 +93,6 @@ button:hover {
 }
 button:active{
     font-size: 11px;
+    width: 93px;
+    height: 53px;
 }
