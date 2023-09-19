@@ -32,11 +32,11 @@ function playRound(playerSelection,computerSelection){
 
 
 const rockButton = document.getElementById('rock');
-rockButton.addEventListener('click',()=>{playRound('Rock')});
+rockButton.addEventListener('click',()=>{playRound(rockButton.innerText)});
 const paperButton = document.getElementById('paper');
-paperButton.addEventListener('click',()=>{playRound('Paper')});
+paperButton.addEventListener('click',()=>{playRound(paperButton.innerText)});
 const scissorsButton = document.getElementById('scissors');
-scissorsButton.addEventListener('click',()=>{playRound('Scissors')});
+scissorsButton.addEventListener('click',()=>{playRound(scissorsButton.innerText)});
 
 
 
