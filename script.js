@@ -1,3 +1,15 @@
+const rockButton = document.getElementById('rock');
+rockButton.addEventListener('click',()=>{playRound(rockButton.innerText)});
+const paperButton = document.getElementById('paper');
+paperButton.addEventListener('click',()=>{playRound(paperButton.innerText)});
+const scissorsButton = document.getElementById('scissors');
+scissorsButton.addEventListener('click',()=>{playRound(scissorsButton.innerText)});
+
+let playResult = document.querySelector('.round-result > p');
+
+let wins = 0;
+let losses = 0;
+
 function getComputerChoice() {
 let randomChoice = Math.floor(Math.random()*3) + 1;
 if (randomChoice == 1) {
@@ -8,8 +20,8 @@ if (randomChoice == 1) {
     return 'Scissors'}
 }
 
+
 function playRound(playerSelection,computerSelection){
-    let playResult = document.querySelector('.round-result > p')
     computerSelection = getComputerChoice();   
     if (playerSelection == computerSelection) {
         playResult.textContent = 'Draw.';
@@ -26,63 +38,34 @@ function playRound(playerSelection,computerSelection){
     } else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
         playResult.textContent = 'You lose,Rock breaks Scissors.'
     }
-    console.log(playResult);
-    return playResult;
+    console.log(playResult.textContent);
+    game()
+    return playResult.textContent;
+    
+    
 }  
 
 
-const rockButton = document.getElementById('rock');
-rockButton.addEventListener('click',()=>{playRound(rockButton.innerText)});
-const paperButton = document.getElementById('paper');
-paperButton.addEventListener('click',()=>{playRound(paperButton.innerText)});
-const scissorsButton = document.getElementById('scissors');
-scissorsButton.addEventListener('click',()=>{playRound(scissorsButton.innerText)});
 
+function game() {
+    let humanScore =document.querySelector('div > .h-s-num').innerHTML = wins;
+    let computerScore = document.querySelector('div > .c-s-num').innerHTML = losses;
+    const winRegex = /You win,*/;
+    const loseRegex = /You lose,*/;
 
+    if (winRegex.test(playResult.textContent)){
+        console.log(humanScore);
+        document.querySelector('div > .h-s-num').innerHTML = wins +=1;
+        console.log(humanScore);
+    }else if (loseRegex.test(playResult.textContent)) {
+        console.log(computerScore);
+        document.querySelector('div > .c-s-num').innerHTML = losses +=1;
+        console.log(computerScore);
+    } 
+    const finalMessage = document.querySelector('.result-display').innerHTML;
 
-
-// function game() {
-//     let wins = 0;
-//     let losses = 0;
-//     let ties = 0;
-//     let finalMessage = '';
+}
     
-//     for (let roundCount = 0; roundCount < 5; roundCount++) {
-//         playRound();
-//     if (playResult == 'You win,Rock breaks Scissors!') {
-//         wins +=1;
-//     }else if (playResult == 'You win,Paper covers Rock!') {
-//         wins +=1;
-//     }else if (playResult == 'You win, Scissors cuts Paper!') {
-//         wins +=1;
-//     }else if (playResult == 'You lose,Paper covers Rock.') {
-//         losses += 1;
-//     }else if (playResult == 'You lose,Scissors cuts Paper.') {
-//         losses +=1;
-//     }else if (playResult == 'You lose,Rock breaks Scissors.') {
-//         losses +=1;
-//     }else if (playResult =='Draw.') {
-//         ties += 1;
-//     } 
-    
-    
-//     }
-//     if (wins > losses) {
-//         finalMessage = `Congratulations! You defeated the machine ${wins} to ${losses}.` 
-//     }else if (losses > wins){
-//         finalMessage = `You lost to the Computer ${losses} to ${wins}.`
-//     }else{
-//         finalMessage = 'It\'s a Draw.';
-//     }
-//     alert(finalMessage);
-//     console.log(finalMessage,wins,losses,ties);
-    
-
-// }
-
-
-
-
 
 const buttons = document.querySelectorAll("button");
 const clickSound = document.getElementById("click");
