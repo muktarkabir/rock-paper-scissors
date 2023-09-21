@@ -2,85 +2,83 @@
     font-family: Dune;
     src: url(Dune_Rise.ttf);
 }
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-image: linear-gradient(to right, #0099f7,#f11712);
+    background-image: linear-gradient(to right, #0099f7, #f11712);
     gap: 50px;
     font-family: Dune;
 }
-.title{
+.title {
     font-size: 50px;
     padding-top: 80px;
     padding-bottom: 20px;
 }
-.sub-title{
+.sub-title {
     display: flex;
     justify-content: center;
 }
-#result-container{
+#result-container {
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.result-display{
+.result-display {
     font-size: 20px;
     padding-bottom: 20px;
 }
-.round-result{
+.round-result {
     height: 40px;
 }
-.score-container{
+
+.score-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 700px;
     height: 70px;
 }
-.human-score{
+.human-score {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 15px;
-    
-    
-    
 }
-.computer-score{
+.computer-score {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;   
+    gap: 15px;
 }
-.h-s-text{
+.h-s-text {
     font-size: 15px;
 }
-.c-s-text{
+.c-s-text {
     font-size: 15px;
 }
-.h-s-num{
+.h-s-num {
     font-size: 40px;
 }
-.c-s-num{
+.c-s-num {
     font-size: 40px;
 }
-.button-container{
+.button-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 400px;
     height: 100px;
 }
-button{
+button {
     width: 90px;
     height: 50px;
     border-radius: 8px;
@@ -90,13 +88,33 @@ button{
     background-color: rgb(134, 30, 175);
     color: cornsilk;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    /* border: none; */
+    cursor: pointer;
 }
 button:hover {
-    background-color: #008CBA;
+    background-color: #008cba;
     color: white;
 }
-button:active{
+button:active {
     font-size: 11px;
     width: 93px;
     height: 53px;
 }
+
+/* sam's input */
+.player--wins {
+    background-image: linear-gradient(
+    to right,
+    rgb(182, 244, 146),
+    rgb(51, 139, 147)
+    );
+}
+
+.player--loses {
+    background-image: linear-gradient(
+    102.2deg,
+    rgb(250, 45, 66) 9.6%,
+    rgb(245, 104, 104) 96.1%
+    );
+}
+
