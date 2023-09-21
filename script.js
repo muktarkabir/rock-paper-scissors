@@ -16,7 +16,7 @@ let playResult = document.querySelector(".round-result > p");
 let wins = 0;
 let losses = 0;
 let playing = true;
-console.log(document.querySelector("body"));
+
 function getComputerChoice() {
 if (playing) {
     let randomChoice = Math.floor(Math.random() * 3) + 1;
@@ -34,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
 if (playing) {
     computerSelection = getComputerChoice();
     if (playerSelection == computerSelection) {
-    playResult.textContent = "Draw.";
+    playResult.textContent = "No winner,It\'s a Draw.";
     } else if (playerSelection == "Rock" && computerSelection == "Paper") {
     playResult.textContent = "You lose,Paper covers Rock.";
     } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
@@ -48,7 +48,6 @@ if (playing) {
     } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
     playResult.textContent = "You lose,Rock breaks Scissors.";
     }
-    console.log(playResult.textContent);
     game();
     return playResult.textContent;
 }
@@ -56,21 +55,15 @@ if (playing) {
 
 function game() {
 if (playing) {
-    let humanScore = (document.querySelector("div > .h-s-num").innerHTML =
-    wins);
-    let computerScore = (document.querySelector("div > .c-s-num").innerHTML =
-    losses);
+    document.querySelector("div > .h-s-num").innerHTML = wins;
+    document.querySelector("div > .c-s-num").innerHTML = losses;
     const winRegex = /You win,*/;
     const loseRegex = /You lose,*/;
 
     if (winRegex.test(playResult.textContent)) {
-    console.log(humanScore);
     document.querySelector("div > .h-s-num").innerHTML = wins += 1;
-    console.log(humanScore);
     } else if (loseRegex.test(playResult.textContent)) {
-    console.log(computerScore);
     document.querySelector("div > .c-s-num").innerHTML = losses += 1;
-    console.log(computerScore);
     }
     if (document.querySelector("div > .h-s-num").innerHTML == 5) {
     playing = false;
@@ -88,8 +81,11 @@ if (playing) {
 
 const buttons = document.querySelectorAll("button");
 const clickSound = document.getElementById("click");
+
 buttons.forEach((button) => {
-button.addEventListener("click", () => {
-    clickSound.play();
-});
-});
+    button.addEventListener("click", () => {
+        clickSound.play();
+    });
+    });
+
+
