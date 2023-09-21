@@ -5,8 +5,9 @@ paperButton.addEventListener('click',()=>{playRound(paperButton.innerText)});
 const scissorsButton = document.getElementById('scissors');
 scissorsButton.addEventListener('click',()=>{playRound(scissorsButton.innerText)});
 
-let playResult = document.querySelector('.round-result > p');
 
+let finalMessage = document.querySelector('.result-display > h2');
+let playResult = document.querySelector('.round-result > p');
 let wins = 0;
 let losses = 0;
 
@@ -62,10 +63,14 @@ function game() {
         document.querySelector('div > .c-s-num').innerHTML = losses +=1;
         console.log(computerScore);
     } 
-    const finalMessage = document.querySelector('.result-display').innerHTML;
-
+    if (document.querySelector('div > .h-s-num').innerHTML == 5) {
+        finalMessage.textContent = 'Congratulations,You Won!';
+    }else if (document.querySelector('div > .c-s-num').innerHTML == 5){
+        finalMessage.textContent = 'Looks like you lost,Play again or something.';
+    }
 }
-    
+
+
 
 const buttons = document.querySelectorAll("button");
 const clickSound = document.getElementById("click");
