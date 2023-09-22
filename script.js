@@ -11,11 +11,40 @@ scissorsButton.addEventListener("click", () => {
 playRound(scissorsButton.innerText);
 });
 
+const buttons = document.querySelectorAll("button");
+const clickSound = document.getElementById("click");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        clickSound.play();
+    });
+    });
+
+const newGame = document.getElementById('new-game')
 let finalMessage = document.querySelector(".result-display > h2");
 let playResult = document.querySelector(".round-result > p");
-let wins = 0;
-let losses = 0;
-let playing = true;
+
+const userScore = document.querySelector("div > .h-s-num");
+const compScore = document.querySelector("div > .c-s-num");
+let wins;
+let losses;
+let playing;
+
+function start() {
+    wins = 0;
+    losses = 0;
+    playing = true;
+    
+    userScore.innerHTML = 0;
+    compScore.innerHTML = 0;
+    
+    document.querySelector("body").classList.remove("player--wins");
+    document.querySelector("body").classList.remove("player--loses");
+    finalMessage.textContent = "Can You Win?";
+    playResult.textContent = "";
+}
+start();
+newGame.addEventListener('click',start);
+
 
 function getComputerChoice() {
 if (playing) {
@@ -33,25 +62,27 @@ if (playing) {
 function playRound(playerSelection, computerSelection) {
 if (playing) {
     computerSelection = getComputerChoice();
+    
     if (playerSelection == computerSelection) {
-    playResult.textContent = "No winner,It\'s a Draw.";
+    finalMessage.textContent = "No winner,It\'s a Draw.";
     } else if (playerSelection == "Rock" && computerSelection == "Paper") {
-    playResult.textContent = "You lose,Paper covers Rock.";
+    finalMessage.textContent = "You lose,Paper covers Rock.";
     } else if (playerSelection == "Rock" && computerSelection == "Scissors") {
-    playResult.textContent = "You win,Rock breaks Scissors!";
+    finalMessage.textContent = "You win,Rock breaks Scissors!";
     } else if (playerSelection == "Paper" && computerSelection == "Rock") {
-    playResult.textContent = "You win,Paper covers Rock!";
+    finalMessage.textContent = "You win,Paper covers Rock!";
     } else if (playerSelection == "Paper" && computerSelection == "Scissors") {
-    playResult.textContent = "You lose,Scissors cuts Paper.";
+    finalMessage.textContent = "You lose,Scissors cuts Paper.";
     } else if (playerSelection == "Scissors" && computerSelection == "Paper") {
-    playResult.textContent = "You win, Scissors cuts Paper!";
+    finalMessage.textContent = "You win, Scissors cuts Paper!";
     } else if (playerSelection == "Scissors" && computerSelection == "Rock") {
-    playResult.textContent = "You lose,Rock breaks Scissors.";
+    finalMessage.textContent = "You lose,Rock breaks Scissors.";
     }
     game();
-    return playResult.textContent;
+    
 }
 }
+
 
 function game() {
 if (playing) {
@@ -59,10 +90,9 @@ if (playing) {
     document.querySelector("div > .c-s-num").innerHTML = losses;
     const winRegex = /You win,*/;
     const loseRegex = /You lose,*/;
-
-    if (winRegex.test(playResult.textContent)) {
+    if (winRegex.test(finalMessage.textContent)) {
     document.querySelector("div > .h-s-num").innerHTML = wins += 1;
-    } else if (loseRegex.test(playResult.textContent)) {
+    } else if (loseRegex.test(finalMessage.textContent)) {
     document.querySelector("div > .c-s-num").innerHTML = losses += 1;
     }
     if (document.querySelector("div > .h-s-num").innerHTML == 5) {
@@ -79,13 +109,6 @@ if (playing) {
 }
 }
 
-const buttons = document.querySelectorAll("button");
-const clickSound = document.getElementById("click");
 
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        clickSound.play();
-    });
-    });
 
 
