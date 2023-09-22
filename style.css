@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    background-image: linear-gradient(to right, #0099f7, #f11712);
+    background-image: linear-gradient(to right, #00eff7, #123bf1);
     gap: 50px;
     font-family: Dune;
 }
@@ -40,10 +40,11 @@ body {
 
 .score-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 700px;
+    width: 900px;
     height: 70px;
+    
 }
 .human-score {
     display: flex;
@@ -51,6 +52,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    
 }
 .computer-score {
     display: flex;
@@ -58,6 +60,7 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 15px;
+    
 }
 .h-s-text {
     font-size: 15px;
@@ -73,7 +76,7 @@ body {
 }
 .button-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 400px;
     height: 100px;
@@ -103,18 +106,13 @@ button:active {
 
 /* sam's input */
 .player--wins {
-    background-image: linear-gradient(
-    to right,
-    rgb(182, 244, 146),
-    rgb(51, 139, 147)
-    );
+    background-image: linear-gradient(to right,rgb(95, 221, 21),rgb(51, 147, 115));
 }
 
 .player--loses {
-    background-image: linear-gradient(
-    102.2deg,
-    rgb(250, 45, 66) 9.6%,
-    rgb(245, 104, 104) 96.1%
-    );
+    background-image: linear-gradient(to right, #0099f7, #f11712);
+}
+#new-game{
+    margin-left: 70px;
 }
 
