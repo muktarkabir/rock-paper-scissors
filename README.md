@@ -10,3 +10,4 @@ I've learned some DOM manipulation techniques!
 It went smoothly except for the issue i encountered about where to call the game function.
 Ill come back and add a new game button.
 A few hours later: I added the new game button.
+Check it out https://muktarkabir.github.io/rock-paper-scissors/
