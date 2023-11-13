@@ -1,118 +1,118 @@
 @font-face {
-    font-family: Dune;
-    src: url(Dune_Rise.ttf);
+	font-family: Dune;
+	src: url(Dune_Rise.ttf);
 }
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-image: linear-gradient(to right, #00eff7, #123bf1);
-    gap: 50px;
-    font-family: Dune;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-image: linear-gradient(to right, #00eff7, #123bf1);
+	gap: 50px;
+	font-family: Dune;
 }
 .title {
-    font-size: 50px;
-    padding-top: 80px;
-    padding-bottom: 20px;
+	font-size: 50px;
+	padding-top: 80px;
+	padding-bottom: 20px;
 }
 .sub-title {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 #result-container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 .result-display {
-    font-size: 20px;
-    padding-bottom: 20px;
+	font-size: 20px;
+	padding-bottom: 20px;
 }
 .round-result {
-    height: 40px;
+	height: 40px;
 }
 
 .score-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 900px;
-    height: 70px;
-    
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 900px;
+	height: 70px;
 }
 .human-score {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
 }
 .computer-score {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
 }
 .h-s-text {
-    font-size: 15px;
+	font-size: 15px;
 }
 .c-s-text {
-    font-size: 15px;
+	font-size: 15px;
 }
 .h-s-num {
-    font-size: 40px;
+	font-size: 40px;
 }
 .c-s-num {
-    font-size: 40px;
+	font-size: 40px;
 }
 .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 400px;
-    height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 400px;
+	height: 100px;
 }
 button {
-    width: 90px;
-    height: 50px;
-    border-radius: 8px;
-    font-family: Dune;
-    font-size: 10px;
-    font-weight: bolder;
-    background-color: rgb(134, 30, 175);
-    color: cornsilk;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    /* border: none; */
-    cursor: pointer;
+	width: 90px;
+	height: 50px;
+	border-radius: 8px;
+	font-family: Dune;
+	font-size: 10px;
+	font-weight: bolder;
+	background-color: rgb(134, 30, 175);
+	color: cornsilk;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	/* border: none; */
+	cursor: pointer;
 }
 button:hover {
-    background-color: #008cba;
-    color: white;
+	background-color: #008cba;
+	color: white;
 }
 button:active {
-    font-size: 11px;
-    width: 93px;
-    height: 53px;
+	font-size: 11px;
+	width: 93px;
+	height: 53px;
 }
 
 /* sam's input */
 .player--wins {
-    background-image: linear-gradient(to right,rgb(95, 221, 21),rgb(51, 147, 115));
+	background-image: linear-gradient(
+		to right,
+		rgb(95, 221, 21),
+		rgb(51, 147, 115)
+	);
 }
 
 .player--loses {
-    background-image: linear-gradient(to right, #0099f7, #f11712);
+	background-image: linear-gradient(to right, #0099f7, #f11712);
 }
-#new-game{
-    margin-left: 70px;
+#new-game {
+	margin-left: 70px;
 }
-
